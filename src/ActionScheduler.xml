@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="caffcode.actionscheduler.ActionScheduler" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Action Scheduler</name>
+    <description>Schedule an action in your page</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <propertyGroup caption="Main">
+                <property key="timerEnabled" type="expression" required="true" defaultValue="true">
+                    <caption>Enabled</caption>
+                    <description>Use this expression to enable or disable the timer.</description>
+                    <returnType type="Boolean" />
+                </property>
+                <property key="timerInterval" type="expression" required="true" defaultValue="1000">
+                    <caption>Interval</caption>
+                    <description>The interval between each action, in milliseconds (ms). This should be bigger than 0.</description>
+                    <returnType type="Integer" />
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Execution">
+                <property key="timerAction" type="action" required="true">
+                    <caption>Action</caption>
+                    <description>The action to execute</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Misc">
+                <property key="fireOnce" type="expression" required="true" defaultValue="false">
+                    <caption>Fire once</caption>
+                    <description>Note: If you set this to true, the interval will act as a delay.
+Note: This is a dynamic value, so you could change it during the runtime, but this is unwise (as this might have weird consequences). For that, it is better to just use the 'Enabled' value (for example, set 'Enabled' to some counter or condition of the surrounding dataview)</description>
+                    <returnType type="Boolean" />
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+
+    </properties>
+</widget>
