@@ -1,4 +1,5 @@
 import { createElement, useCallback, useMemo, FC, useRef } from "react";
+import { useUnmount } from "react-use";
 
 import { ActionSchedulerContainerProps } from "../typings/ActionSchedulerProps";
 import { Scheduler } from "./components/Scheduler";
@@ -30,6 +31,12 @@ export const ActionScheduler: FC<ActionSchedulerContainerProps> = ({
         }),
         [enabled, interval, once]
     );
+
+    useUnmount(() => {
+        if (firedOnceTimeout.current !== -1) {
+            clearTimeout(firedOnceTimeout.current);
+        }
+    });
 
     if (loadinEnabled || loadingInterval || loadingOnce) {
         return null;

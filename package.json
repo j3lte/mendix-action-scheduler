@@ -1,7 +1,7 @@
 {
   "name": "actionscheduler",
   "widgetName": "ActionScheduler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Schedule an action in your page",
   "copyright": "© CaffCode 2022. All Rights Reserved.",
   "author": "Jelte Lagendijk (jelte@caffcode.com)",
